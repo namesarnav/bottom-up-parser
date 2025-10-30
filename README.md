@@ -72,6 +72,7 @@ If you prefer to run it yourself:
 ```bash
 make clean
 make
+./parser
 ```
 
 - Or you can do it all manually with: 
@@ -141,6 +142,6 @@ Tools used:
 
 ## Author
 
-Arnav Verma
-University of North Texas
-CSCE 4430 – Programming Languages
+Arnav Verma <br>
+University of North Texas <br>
+CSCE 4430 – Programming Languages <br>
