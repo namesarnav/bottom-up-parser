@@ -129,10 +129,10 @@ sudo apt install flex bison
 ```
 
 ## Use of AI
-AI tools were used to assist only with **documentation writing**, **debugging** , and **code formatting**. 
+AI tools were used to assist only with **documentation** and **debugging**. 
 
 Tools used: 
-1. Github Copilot - Debugging and Code Formatting
+1. Github Copilot - Debugging 
 2. ChatGPT - Formatting `README.md` and adding comments in code
 
 **All core logic, grammar rules, and testing were implemented and verified manually by me (Arnav).**
