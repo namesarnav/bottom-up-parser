@@ -1,4 +1,4 @@
-# Project 2 – Bottom-Up Parser (Flex & Bison)
+# Project 2 – Bottom Up Parser (Flex & Bison)
 
 ## Overview
 
@@ -40,80 +40,65 @@ x = y + 2 * (3 - 1)
 | `README.md` | Project documentation and usage guide                                        |
 
 ---
+## Build and Run Instructions
 
-## Build Instructions
+You can run the project using either a shell script or by compiling manually.
 
-Compile the program:
+---
 
+### **Option 1: Using `run.sh` (Recommended)**
+
+1. **Give execution permission (first time only):**
+
+   ```bash
+   chmod +x run.sh
+   ```
+
+2. **Run the project:**
+
+   ```bash
+   ./run.sh
+   ```
+
+This script automatically compiles the source files and runs the program for you.
+
+---
+
+### **Option 2: Manual Compilation and Execution**
+
+If you prefer to run it yourself:
+
+- You can either use the Makefile:
 ```bash
+make clean
 make
 ```
 
-Clean all generated files:
-
+- Or you can do it all manually with: 
 ```bash
-make clean
-```
-
----
-
-## Run Instructions
-
-Run interactively:
-
-```bash
+bison -d parser.y
+flex lexer.l
+gcc parser.tab.c lex.yy.c -o parser -lfl
 ./parser
 ```
 
-You’ll see:
+You can then enter expressions interactively:
 
 ```
 Enter expressions (Ctrl+D to end):
-```
-
-Type statements line by line (press Enter between each).
-Use **Ctrl+D** (Linux/macOS) or **Ctrl+Z + Enter** (Windows) to end input.
-
----
-
-## Example Run
-
-**Input**
-
-```
-A = 6 + x + 9
-x = 2 + 2 * 4
-```
-
-**Output**
-
-```
-=== Abstract Syntax Tree ===
-ASSIGNMENT: A =
-  OPERATOR: +
-    OPERATOR: +
-      INTEGER: 6
-      VARIABLE: x
-    INTEGER: 9
-
-=== Abstract Syntax Tree ===
-ASSIGNMENT: x =
-  OPERATOR: +
-    INTEGER: 2
-    OPERATOR: *
-      INTEGER: 2
-      INTEGER: 4
+a = b + c
+x = 1 + 2 * 3
 ```
 
 ---
 
 ## Features
 
-* ✅ Supports integers, variables, and operators `+`, `-`, `*`, `/`
-* ✅ Handles parentheses `( )`
-* ✅ Accepts multiple statements per run
-* ✅ Prints a structured **Abstract Syntax Tree**
-* ✅ Reports **lexical and syntax errors** with line and column numbers
+* Supports integers, variables, and operators `+`, `-`, `*`, `/`
+* Handles parentheses `( )`
+* Accepts multiple statements per run
+* Prints a structured **Abstract Syntax Tree**
+* Reports **lexical and syntax errors** with line and column numbers
 
 ---
 
@@ -142,6 +127,15 @@ Install dependencies (if needed):
 ```bash
 sudo apt install flex bison
 ```
+
+## Use of AI
+AI tools were used to assist only with **documentation writing**, **debugging** , and **code formatting**. 
+
+Tools used: 
+1. Github Copilot - Debugging and Code Formatting
+2. ChatGPT - Formatting `README.md` and adding comments in code
+
+**All core logic, grammar rules, and testing were implemented and verified manually by me (Arnav).**
 
 ---
 
